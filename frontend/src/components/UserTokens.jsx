@@ -13,7 +13,7 @@ function UserTokens() {
       try {
         const token = localStorage.getItem('token'); // Get token from localStorage
         const response = await axios.get(
-          `${process.env.REACT_APP_BACKEND_URL}/api/tokens/user-tokens`,
+          `${import.meta.env.VITE_SOLANA_CLUSTOR}/api/tokens/user-tokens`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         setTokens(response.data);
