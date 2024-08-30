@@ -27,7 +27,7 @@ function CreateToken() {
       const token = localStorage.getItem('token'); // Get token from localStorage
       console.log(token)
       const response = await axios.post(
-        `http://localhost:5000/api/tokens/create`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/tokens/create`,
         { ...tokenData, walletAddress },
         { headers: { authorization: `Bearer ${token}` } }
       );
